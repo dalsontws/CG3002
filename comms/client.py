@@ -3,13 +3,14 @@ import time
 import socket
 import sys
 import threading
-import RingBuffer as RB
+import numpy as np
+from numpy_ringbuffer import RingBuffer
 
 mutex = threading.Lock()
 
 class Raspberry():
         def __init__(self):
-                self.buffer = RB.RingBuffer(32)
+                self.buffer = RingBuffer(32)
                 self.powerList = [0, 0, 0, 0]
 
         def main(self):
